@@ -166,34 +166,36 @@ buttons.forEach((button)=>{
         compScore=0;
         numberRounds=0;
         result=0;
-        para.textContent=`Player: ${playerScore} Comp:${compScore}`;
+        // para.textContent=`Player: ${playerScore} Comp:${compScore}`;
         container.appendChild(para);
-        explain.textContent="";
 
               }
       else if (playerScore < compScore){
         console.log(`You lose with score: ${playerScore} to ${compScore}.`);
         verdict.textContent=`You lose with score: ${playerScore} to ${compScore}.`
         container.appendChild(verdict);
+        // para.textContent=`Player: ${playerScore} Comp:${compScore}`;
         playerScore=0;
         compScore=0;
+        
         numberRounds=0;
         result=0;
-        para.textContent=`Player: ${playerScore} Comp:${compScore}`;
+        
         container.appendChild(para);
-        explain.textContent="";
+        
       }
-      else {
+      else{
         console.log(`It's a tie : ${playerScore} : ${compScore}`);
-        verdict.textContent=`It's a tie : ${playerScore} : ${compScore}`
+        verdict.textContent=`It's a tie : ${playerScore} : ${compScore}`;
         container.appendChild(verdict);
+        // para.textContent=`Player: ${playerScore} Comp:${compScore}`;
         playerScore=0;
         compScore=0;
         numberRounds=0;
         result=0;
-        para.textContent=`Player: ${playerScore} Comp:${compScore}`;
+        
         container.appendChild(para);
-        explain.textContent="";
+        
       }
       
 
