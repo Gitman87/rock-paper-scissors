@@ -2,33 +2,6 @@
 //function for getting computer choice
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random()*3) +1;
-<<<<<<< HEAD
-  
-  return randomNumber;
-}
-//player choice function
-function playerSelection(){
-  let choiceCorrected="";
-  
-  do {
-  let choice = prompt("Type Rock, Paper or Scissors");
-  
-  choiceCorrected = choice.toLowerCase();
-  
-  } while(choiceCorrected !="rock"&& choiceCorrected != "paper" && choiceCorrected !="scissors");
- 
-  switch(choiceCorrected){
-    case 'rock':
-      return 1;
-    case 'paper':
-      return 2;
-    case 'scissors':
-      return 3;
-    default:
-      console.log("Correct your answer!")
-  }
-=======
->>>>>>> GUI
   
   return randomNumber;
 }
@@ -37,66 +10,42 @@ function playerSelection(){
 function playRound(playerSelection,computerSelection){
   // computerSelection = getComputerChoice();
   // playerSelection = playerSelection();
-<<<<<<< HEAD
-  if(playerSelection === 1 && computerSelection === 2){
-=======
   if(playerSelection == 1 && computerSelection == 2){
->>>>>>> GUI
     //computer wins
     console.log("You lose! Paper beats Rock");
     explain.textContent="You lose! Paper beats Rock";
     container.appendChild(explain);
     return 2;
   }
-<<<<<<< HEAD
-  else if ( playerSelection ===  1 && computerSelection === 3){
-=======
   else if ( playerSelection ==  1 && computerSelection == 3){
->>>>>>> GUI
     // player wins
     console.log("You win! Rock beats Scissors");
     explain.textContent="You win! Rock beats Scissors";
     container.appendChild(explain);
     return 1;
   }
-<<<<<<< HEAD
-  else if ( playerSelection === 2 && computerSelection === 1){
-=======
   else if ( playerSelection == 2 && computerSelection == 1){
->>>>>>> GUI
     // player wins
     console.log("You win! Paper beats Rock");
     explain.textContent="You win! Paper beats Rock";
     container.appendChild(explain);
     return 1;
   }
-<<<<<<< HEAD
-  else if ( playerSelection === 2 && computerSelection === 3){
-=======
   else if ( playerSelection == 2 && computerSelection == 3){
->>>>>>> GUI
   //   computer wins
     console.log("You lose! Scissors beats Paper");
     explain.textContent="You lose! Scissors beats Paper";
     container.appendChild(explain);
     return 2;
    }
-<<<<<<< HEAD
-   else if (playerSelection === 3 && computerSelection === 1){
-=======
    else if (playerSelection ==3 && computerSelection == 1){
->>>>>>> GUI
     // computer wins
     console.log("You lose! Rock beats Scissors");
     explain.textContent="You lose! Rock beats Scissors";
     container.appendChild(explain);
     return 2;
    }
-<<<<<<< HEAD
-   else if (playerSelection === 3 && computerSelection ===2){
-=======
    else if (playerSelection ==3 && computerSelection ==2){
->>>>>>> GUI
     // player wins
     console.log("You win! Scissors  beats Paper");
     explain.textContent="You win! Scissors  beats Paper";
@@ -112,40 +61,6 @@ function playRound(playerSelection,computerSelection){
   
 
 }
-<<<<<<< HEAD
-//round counter
-function playGame(){ 
-  let playerScore=0;
-  let compScore=0;
-  for(i=0; i<5; i++){
-  
-  let compChoice = getComputerChoice();
-  let playChoice = playerSelection();
-  let result;
-  result = playRound(playChoice, compChoice);
-  if ( result === 1){
-    playerScore++;
-  }
-  else if (result === 2){
-    compScore++;
-  }
- 
-}
-//compare scores
-if( playerScore > compScore){
-  console.log(`Congrats: You are the winner with score: ${playerScore} to ${playerScore}.`);
-}
-else if (playerScore < compScore){
-  console.log(`Congrats: You are the winner with score: ${compScore} to ${playerScore}.`)
-}
-else {
-  console.log(`It's a tie : ${playerScore} : ${playerScore}`);
-}
-}
-//execute
-console.log("Hello this is Rock Paper Scissors Game. We play 5 rounds. Good luck!");
-playGame();
-=======
 
 //execute
 
@@ -232,4 +147,3 @@ buttons.forEach((button)=>{
   )
 })
 // playGame();
->>>>>>> GUI
