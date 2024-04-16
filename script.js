@@ -5,29 +5,7 @@ function getComputerChoice() {
   
   return randomNumber;
 }
-// //player choice function
-// function playerSelection(){
-//   let choiceCorrected="";
-  
-//   do {
-//   let choice = prompt("Type Rock, Paper or Scissors");
-  
-//   choiceCorrected = choice.toLowerCase();
-  
-//   } while(choiceCorrected !="rock"&& choiceCorrected != "paper" && choiceCorrected !="scissors");
- 
-//   switch(choiceCorrected){
-//     case 'rock':
-//       return 1;
-//     case 'paper':
-//       return 2;
-//     case 'scissors':
-//       return 3;
-//     default:
-//       console.log("Correct your answer!")
-//   }
-  
-// }
+
 //play round function
 function playRound(playerSelection,computerSelection){
   // computerSelection = getComputerChoice();
@@ -83,37 +61,9 @@ function playRound(playerSelection,computerSelection){
   
 
 }
-// //round counter
-// function playGame(){ 
-//   let playerScore=0;
-//   let compScore=0;
-//   for(i=0; i<5; i++){
-  
-//   let compChoice = getComputerChoice();
-//   let playChoice = playerSelection();
-//   let result;
-//   result = playRound(playChoice, compChoice);
-//   if ( result === 1){
-//     playerScore++;
-//   }
-//   else if (result === 2){
-//     compScore++;
-//   }
- 
-// }
-// //compare scores
-// if( playerScore > compScore){
-//   console.log(`Congrats: You are the winner with score: ${playerScore} to ${playerScore}.`);
-// }
-// else if (playerScore < compScore){
-//   console.log(`Congrats: You are the winner with score: ${compScore} to ${playerScore}.`)
-// }
-// else {
-//   console.log(`It's a tie : ${playerScore} : ${playerScore}`);
-// }
-// }
+
 //execute
-console.log("Hello this is Rock Paper Scissors Game. We play 5 rounds. Good luck!");
+
 const buttons= document.querySelectorAll(".choice");
 let playerScore=0;
 let compScore=0;
@@ -131,14 +81,12 @@ explain.textContent="";
 const verdict=document.createElement('p');
 verdict.classList.add('verdict-para');
 verdict.textContent='';
-
-
-
+//button function
 buttons.forEach((button)=>{
   button.addEventListener("click",()=>{
     let comp=getComputerChoice();
     result = playRound(button.id, comp);
-    console.log(button.id, comp);
+    // console.log(button.id, comp);
     
     if ( result == 1){
       playerScore++;
@@ -153,63 +101,49 @@ buttons.forEach((button)=>{
       compScore++;
       numberRounds++;
     }
-    console.log(playerScore, compScore);
+    // console.log(playerScore, compScore);
     para.textContent=`Player: ${playerScore} Comp:${compScore}`;
     container.appendChild(para);
     
     if (numberRounds>=5){
       if( playerScore > compScore){
-        console.log(`Congrats: You are the winner with score: ${playerScore} to ${compScore}.`);
+        // console.log(`Congrats: You are the winner with score: ${playerScore} to ${compScore}.`);
         verdict.textContent=`Congrats: You are the winner with score: ${playerScore} to ${compScore}.`
+        container.appendChild(para);
         container.appendChild(verdict);
         playerScore=0;
         compScore=0;
         numberRounds=0;
         result=0;
         // para.textContent=`Player: ${playerScore} Comp:${compScore}`;
-        container.appendChild(para);
-
-              }
+        }
       else if (playerScore < compScore){
-        console.log(`You lose with score: ${playerScore} to ${compScore}.`);
-        verdict.textContent=`You lose with score: ${playerScore} to ${compScore}.`
+        // console.log(`You lose with score: ${playerScore} to ${compScore}.`);
+        verdict.textContent=`You lose with score: ${playerScore} to ${compScore}.`;
+        container.appendChild(para);
         container.appendChild(verdict);
         // para.textContent=`Player: ${playerScore} Comp:${compScore}`;
         playerScore=0;
         compScore=0;
-        
         numberRounds=0;
         result=0;
-        
-        container.appendChild(para);
-        
-      }
+        }
       else{
-        console.log(`It's a tie : ${playerScore} : ${compScore}`);
+        // console.log(`It's a tie : ${playerScore} : ${compScore}`);
         verdict.textContent=`It's a tie : ${playerScore} : ${compScore}`;
+        container.appendChild(para);
         container.appendChild(verdict);
         // para.textContent=`Player: ${playerScore} Comp:${compScore}`;
         playerScore=0;
         compScore=0;
         numberRounds=0;
         result=0;
-        
-        container.appendChild(para);
-        
+        }
       }
-      
-
-    }
     else{
       verdict.textContent='';
     }
-    
-    
-   
-  
-
-
-  }
-)
+    }
+  )
 })
 // playGame();
